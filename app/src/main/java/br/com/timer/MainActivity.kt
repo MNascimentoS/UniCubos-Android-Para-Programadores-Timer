@@ -1,4 +1,4 @@
-package br.com.unicubos.timercubos
+package br.com.timer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,8 +10,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val adapter = MainPagerAdapter(supportFragmentManager)
-        tablayout.setupWithViewPager(viewpager)
-        viewpager.adapter = adapter
+        toolbar.title = getString(R.string.app_name)
+        tabLayout.setupWithViewPager(viewPager)
+        viewPager.adapter = TimerPageAdapter(supportFragmentManager)
     }
 }

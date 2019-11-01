@@ -1,4 +1,4 @@
-package br.com.unicubos.timercubos
+package br.com.timer
 
 import org.junit.Test
 
