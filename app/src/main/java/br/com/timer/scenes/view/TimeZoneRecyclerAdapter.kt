@@ -1,12 +1,17 @@
-package br.com.timer
+package br.com.timer.scenes.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import br.com.timer.R
+import br.com.timer.scenes.model.TimeZoneModel
 import kotlinx.android.synthetic.main.item_time_zone.view.*
 
-class TimeZoneRecyclerAdapter(private val timeZoneList: ArrayList<TimeZoneModel>) : RecyclerView.Adapter<TimeZoneRecyclerAdapter.TimeZoneViewHolder>() {
+class TimeZoneRecyclerAdapter(
+    private val timeZoneList: ArrayList<TimeZoneModel>,
+    private val onClick: ((String) -> Unit)
+) : RecyclerView.Adapter<TimeZoneRecyclerAdapter.TimeZoneViewHolder>() {
 
     override fun getItemCount(): Int = timeZoneList.size
 
@@ -17,11 +22,15 @@ class TimeZoneRecyclerAdapter(private val timeZoneList: ArrayList<TimeZoneModel>
     override fun onBindViewHolder(holder: TimeZoneViewHolder, position: Int) {
         with(holder.itemView) {
             countryTXT?.text = timeZoneList[position].name
-            timezoneTXT?.text = ("${timeZoneList[position].timezone}${timeZoneList[position].time}")
+            setOnClickListener {
+                onClick(timeZoneList[position].name)
+            }
+
+//            timezoneTXT?.text = ("${timeZoneList[position].timezone}${timeZoneList[position].time}")
         }
     }
 
-    fun addMoreItems(list: ArrayList<TimeZoneModel>) {
+    fun addMoreItems(list: List<TimeZoneModel>) {
         timeZoneList.addAll(list)
         notifyDataSetChanged()
     }

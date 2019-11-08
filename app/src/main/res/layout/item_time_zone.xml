@@ -24,6 +24,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-black"
-        tools:text="TIMEZONE" />
+        tools:text="TIMEZONE"
+        android:visibility="gone"/>
 
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".TimezoneFragment">
+    tools:context=".scenes.view.TimezoneFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -17,12 +17,12 @@
         app:spanCount="3"/>
 
 
-    <Button
-        android:id="@+id/addMoreBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:layout_alignParentBottom="true"
-        android:text="Adicionar Mais"/>
+<!--    <Button-->
+<!--        android:id="@+id/addMoreBTN"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="24dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:text="Adicionar Mais"/>-->
 
 </RelativeLayout>
