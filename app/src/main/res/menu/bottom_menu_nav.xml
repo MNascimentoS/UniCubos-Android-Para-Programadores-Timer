@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/timezone"
+        android:title="Timezone"
+        app:showAsAction="always"/>
+    <item android:id="@+id/timer"
+        android:title="Timer"
+        app:showAsAction="always"/>
+    <item android:id="@+id/stopwatch"
+        android:title="Stopwatch"
+        app:showAsAction="always"/>
+</menu>

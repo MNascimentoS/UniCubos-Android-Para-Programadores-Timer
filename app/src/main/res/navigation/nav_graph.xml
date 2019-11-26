@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/timezone">
+
+    <fragment
+        android:id="@+id/timezone"
+        android:name="br.com.timer.scenes.view.TimezoneFragment"
+        android:label="fragment_timezone"
+        tools:layout="@layout/fragment_timezone" >
+        <action
+            android:id="@+id/action_timezone_to_timeZoneDetailsActivity"
+            app:destination="@id/timeZoneDetailsActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/timer"
+        android:name="br.com.timer.TimerFragment"
+        android:label="TimerFragment"
+        tools:layout="@layout/fragment_timer"/>
+    <fragment
+        android:id="@+id/stopwatch"
+        android:name="br.com.timer.StopwatchFragment"
+        android:label="StopwatchFragment"
+        tools:layout="@layout/fragment_stopwatch"/>
+    <activity
+        android:id="@+id/timeZoneDetailsActivity"
+        android:name="br.com.timer.TimeZoneDetailsActivity"
+        android:label="TimeZoneDetailsActivity"
+        tools:layout="@layout/activity_detail">
+        <argument
+            android:name="timezone"
+            app:argType="br.com.timer.scenes.model.TimeZoneModel" />
+    </activity>
+</navigation>

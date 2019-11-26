@@ -1,6 +1,7 @@
 package br.com.timer.scenes.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.util.*
 
 data class TimeZoneModel(
@@ -11,4 +12,4 @@ data class TimeZoneModel(
     @SerializedName("utc_datetime")
     val timezone: Date = Date(),
     val time: Int = 0
-)
+) : Serializable

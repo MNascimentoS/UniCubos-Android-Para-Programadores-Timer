@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.timer.R
 import br.com.timer.scenes.Timezone
@@ -54,12 +55,8 @@ class TimezoneFragment : Fragment(), Timezone.View {
 
     @SuppressLint("SimpleDateFormat")
     override fun displayTimezone(timezone: TimeZoneModel) {
-        AlertDialog
-            .Builder(context)
-            .setTitle(timezone.name)
-            .setMessage("Abbreviation: ${timezone.abbreviation}\n" +
-                    "Date: ${SimpleDateFormat("dd/MM/yy HH:mm").format(timezone.timezone)}" )
-            .show()
+        val action = TimezoneFragmentDirections.actionTimezoneToTimeZoneDetailsActivity(timezone)
+        findNavController().navigate(action)
     }
 
     override fun displayFailure(error: Int) {
